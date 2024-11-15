@@ -259,3 +259,5 @@ Failfast mode
 dropmalformed mode
 permissive mode-stores in "_corrupt_record"
 
+.option("mode","DROPMALFORMED")
+
