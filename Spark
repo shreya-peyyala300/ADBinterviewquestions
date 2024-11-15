@@ -213,6 +213,40 @@ In the job configuration, you can set the task dependencies so that Task 2 will 
 63)special folder ? worspace shared user, cannot move or rename a folder 
 64)flatten json:
 df=spark.read.option("multiline","true").json("path")
-65)
+df_flat = df.select(
+    "name",
+    F.col("address.street").alias("address_street"),
+    F.col("address.city").alias("address_city"),
+    F.col("address.zip.code").alias("address_zip_code"),
+    F.col("address.zip.area").alias("address_zip_area"),
+    F.explode("phones").alias("phone")
+)
 
+# Now flatten the 'phone' struct into separate columns
+df_flat = df_flat.select(
+    "name",
+    "address_street",
+    "address_city",
+    "address_zip_code",
+    "address_zip_area",
+    F.col("phone.type").alias("phone_type"),
+    F.col("phone.number").alias("phone_number")
+)
+
+df_flat.show(truncate=False)
+
+65)DBFS
+66)Mount, unmount,refreshMounts-dbsutil.fs.mount(source=,mount_point=,extra_config=)
+67)run:dbutils.notebook.run()
+68)exit:dbutils.notebook.exit()
+69)Widgets- combox,dropdown,get,getArgument,multiselect,remove,text
+70)pass parameter values from one notebook to another 
+71)Parameterize SQl notebook-getArgument()
+72)how to mount Azure blob storage ?1)Accountkey and sas token
+73)what is account key in Azure
+the Account Key typically refers to a unique key that is used to authenticate and access resources in Azure storage services such as Azure Blob Storage, Azure Queue Storage, Azure Table Storage, and Azure File Storage
+
+74)In Azure, a Shared Access Signature (SAS) token provides a way to grant restricted access to resources in Azure Storage without exposing the account key
+75)updateMount()
+76)
 
