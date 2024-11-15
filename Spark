@@ -254,5 +254,8 @@ the Account Key typically refers to a unique key that is used to authenticate an
 -optimizing skew joins
 78)checkpointing
 79)serialize and deserialization obj to byte
-80)
+80)Read Modes in pyspark
+Failfast mode
+dropmalformed mode
+permissive mode-stores in "_corrupt_record"
 
