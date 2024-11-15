@@ -85,6 +85,16 @@ Garbage collection scan is avoided .
 (young generation move data to->old generation )
 
 35)Cluster?
+Databricks cluster is a set of computational resources and configurations on which you run DE, DS and Da workloads such as ETL Pipelines ,Stream Analytics and adhoc ml models .
 
+36)types of cluster 
+All purpose CLusters:
+used for developement . we can see output interactively 
+Terminated ,restared manually.
+Computing resource is share .
+
+Job Cluster:
+can run fast and robust automated jobs .Created automatically and terminates after end of excution 
+Use for scheduled jobs
 
 
