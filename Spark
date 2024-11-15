@@ -86,7 +86,7 @@ Garbage collection scan is avoided .
 
 35)Cluster?
 Databricks cluster is a set of computational resources and configurations on which you run DE, DS and Da workloads such as ETL Pipelines ,Stream Analytics and adhoc ml models .
-
+present in compute . can conf min and max worker nodes
 36)types of cluster 
 All purpose CLusters:
 used for developement . we can see output interactively 
@@ -105,5 +105,23 @@ less booting time . Suitable for cost saving and larger teams .
 Standard:suitable for single user and if no team collaboration is required 
 High Concurrency: suitable for collaboration. Provides fine grain sharing for max resources and min latency
 Single Node: this mode runs job only on driver node and no worker node are provisioned .
+
+38)Cluster runtime?
+Runtime is set of core components that are needed for cluster to run 
+
+39)spot instance?
+workload of less priority. Azure check free instance(lesscost) uses this
+
+40)Worker Types and driver type?
+compute optimize
+general 
+memory
+storage optimized
+
+Cluster features :
+logging into dbfs
+tag
+spark config
+
 
 
