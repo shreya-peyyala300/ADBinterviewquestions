@@ -123,5 +123,17 @@ logging into dbfs
 tag
 spark config
 
+41)Reading CSV File
+df=spark.read.format()
+.option("inferSchema")
+.option("header")
+.option("sep")
+.schema()
+.load(path1,path2)
 
+42)what is inferSchema?
+Automatic Type Detection: It can automatically infer the data types of columns such as String, Integer, Double, Date, etc.
+Costly Operation
+Default Behavior: By default, Spark assumes that the data is of type String for each column if inferSchema is not enabled.
 
+43)
