@@ -63,5 +63,7 @@ local machine--spark-submit \
 
 29)Advantage of ooff heap memory? we donot need to serialize and deserialize  ..........  Garbage collector -when memory full, gc scans entire memory and removes obsolute objects . This is unecessary process . This is present in off heap memory 
 
-30)On heap memory architecture --see the image 
+30)On heap memory architecture --see the image.png
+
+
 
