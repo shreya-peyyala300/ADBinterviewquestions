@@ -10,7 +10,7 @@
 
 6)groupby key vs reduce by key. Which one is optimal and why ?
 
-7)Transformation and Action with examples 
+7)Transformation(filter,union) and Action(showw,collect,take,count,save) 
 
 8)External Shuffle Service why is it used ?
 
@@ -65,5 +65,23 @@ local machine--spark-submit \
 
 30)On heap memory architecture --see the image.png
 
+31)calculate the number of cores and memory required (ex- 6 machines , 16 core , 64GB Memory)
+
+32)Narrow(No shuffle,faster and efficient)-map,filter,union,mappartitiions,sample vs Wide Transformation (shuffle happens group by key , reduce by key ,join)
+
+33)Explain Storage layer of onheap memory
+Reserver Memory-Reserved by spark for internal purpose 
+user Memory-storing the data structures created and managed by users code
+Execution memory-jvm heap use full for shuffle operations
+Storage Memory-JVM Heap for cache data 
+dis: take more time to execute as gc will also pause the process to remove the objects
+
+34)Explain off heap memory
+if onheap cannot accomodate take help of off heap 
+enable off heap by spark.memory.offHeap.use to true 
+Accessing off heap is slower than the on heap but faster than read/write from disk .
+Garbage collection scan is avoided .
+
+(young generation move data to->old generation )
 
 
