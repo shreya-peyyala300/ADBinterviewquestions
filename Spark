@@ -51,10 +51,17 @@ local machine--spark-submit \
 23)core - threads
 
 24)on heap memory -the executor memory on the jvm ,managed by jvm
-25)off heap memory -the executor memory lies outside Jvm process manages by os
-26)ibraries supported by spark -sql,stream,ml,graphx 
-27)Driver architecture --tf->Dag scheduler ->Task Scheduler->Cluster Manager ->Deploye Scheduler to workers ->worker result given to driver tracked by out put tracker 
-28) Worker Node Architecture ->executor -> cores->onheap memory 
- all the above alse connects to off heap memeory 
 
-29)
+25)off heap memory -the executor memory lies outside Jvm process manages by os
+
+26)ibraries supported by spark -sql,stream,ml,graphx 
+
+27)Driver architecture --tf->Dag scheduler ->Task Scheduler->Cluster Manager ->Deploye Scheduler to workers ->worker result given to driver tracked by out put tracker 
+
+28) Worker Node Architecture ->executor -> cores->onheap memory (only one per executor) 
+ all the above also connects to off heap memeory 
+
+29)Advantage of ooff heap memory? we donot need to serialize and deserialize  ..........  Garbage collector -when memory full, gc scans entire memory and removes obsolute objects . This is unecessary process . This is present in off heap memory 
+
+30)On heap memory architecture --see the image 
+
