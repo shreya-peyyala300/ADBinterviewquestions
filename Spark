@@ -124,11 +124,11 @@ tag
 spark config
 
 41)Reading CSV File
-df=spark.read.format()
-.option("inferSchema")
-.option("header")
-.option("sep")
-.schema()
+df=spark.read.format("")
+.option("inferSchema","true")
+.option("header","true")
+.option("sep",",")
+.schema(schema)
 .load(path1,path2)
 
 42)what is inferSchema?
@@ -136,4 +136,47 @@ Automatic Type Detection: It can automatically infer the data types of columns s
 Costly Operation
 Default Behavior: By default, Spark assumes that the data is of type String for each column if inferSchema is not enabled.
 
-43)
+43)what is printSchema()?syntax
+
+44)crud:
+add:df.withColumn("new_column_name",Value)
+rename: df.withColumnRenamed("Oldname","New_name")
+drop:df.drop("column Name")
+
+45)Add new Column:
+df.withColumn("location",lit("Mumbai")).show()
+
+46)How to add newColumn by calculation
+df.withColumn("Bonus",emDf.salary*0.1)
+
+47)join
+# Joining on multiple columns
+df1 = spark.createDataFrame([(1, "Alice", "A"), (2, "Bob", "B"), (3, "Charlie", "C")], ["id", "name", "group"])
+df2 = spark.createDataFrame([(1, "Math", "A"), (2, "Science", "B"), (4, "History", "D")], ["id", "subject", "group"])
+
+result = df1.join(df2, on=["id", "group"], how="inner")
+result.show()
+
+from pyspark.sql.functions import broadcast
+result = df1.join(broadcast(df2), on="id", how="inner")
+
+48)DBUtils-
+Databricks Utils help to interact with databricks file and Notebooks.
+handle i/p and o/p of notebooks
+
+dbutils.fs.help()
+dbutils.notebook.help()
+dbutils.widgets.help()
+dbutils.secrets.help("get")
+dbutils.fs.help("cp")
+dbutils.notebook.help("exit")
+
+
+49)Dynamic Partition Pruning / Predicate push down 
+50)Handling Skewed data
+51)Spark Optimizations 
+52)Partitio Vs Buckets
+53) workspace in ADB 
+54)Assets of Workspace in ADB 
+55) how to access work space?
+56
