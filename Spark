@@ -160,6 +160,14 @@ result.show()
 from pyspark.sql.functions import broadcast
 result = df1.join(broadcast(df2), on="id", how="inner")
 
+Join Type	Description
+inner	Returns only matching rows from both DataFrames (default join type).
+left	Returns all rows from the left DataFrame, matching rows from the right.
+right	Returns all rows from the right DataFrame, matching rows from the left.
+outer	Returns all rows from both DataFrames, with null values where no match.
+left_semi	Returns only rows from the left DataFrame that have a matching key in the right.
+left_anti	Returns only rows from the left DataFrame that do not have a matching key in the right.
+
 48)DBUtils-
 Databricks Utils help to interact with databricks file and Notebooks.
 handle i/p and o/p of notebooks
@@ -179,4 +187,32 @@ dbutils.notebook.help("exit")
 53) workspace in ADB 
 54)Assets of Workspace in ADB 
 55) how to access work space?
-56
+56)notebooks ?
+57)Job ? Job is a mechanism to run code in ADB  we can automate this 
+58)library?
+59)Data in ADB?
+60)Experiments?
+61)Workflows?
+Azure Databricks (ADB), a workflow refers to the process of organizing and executing a series of tasks, notebooks, or jobs that are intended to accomplish a particular data engineering, data science, or machine learning process.
+Databricks provides several tools to help define, schedule, and automate workflows efficiently, from simple batch processing to complex data pipelines.
+
+Example of a Databricks Workflow
+Consider a simple data pipeline where you:
+
+Extract data from a source (e.g., a CSV file in Azure Blob Storage).
+Transform the data using a series of PySpark transformations.
+Load the transformed data into a Delta Lake table for further processing.
+This process can be broken down into several tasks:
+
+Task 1: Run a notebook that extracts data from Azure Blob Storage and performs some basic cleaning.
+Task 2: Run a second notebook to perform more complex transformations on the data.
+Task 3: Save the transformed data to Delta Lake, ensuring that data integrity is maintained.
+In the job configuration, you can set the task dependencies so that Task 2 will not start until Task 1 finishes, and Task 3 will start only after Task 2.
+
+62)Folder ?static assets 
+63)special folder ? worspace shared user, cannot move or rename a folder 
+64)flatten json:
+df=spark.read.option("multiline","true").json("path")
+65)
+
+
