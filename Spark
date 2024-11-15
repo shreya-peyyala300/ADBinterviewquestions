@@ -1,0 +1,60 @@
+1)Spark internal Architecture?
+
+2)Repartition and colease
+
+3)Cache and Persist
+
+4)Difference between CSV JSON Parquest and Avro
+
+5)Driver and Executor OOM
+
+6)groupby key vs reduce by key. Which one is optimal and why ?
+
+7)Transformation and Action with examples 
+
+8)External Shuffle Service why is it used ?
+
+8)Dynamic Resource Allocation why do we need Shuffle service ?
+
+9)Spark App lifecycle->Spark submit->Driver Initiates Spark session->DAG creates logical plan ->Task Executor requests cluster manager for resources->Cluster manager allocates the resources -> Driver establishes connection with worker and assigns task->Worker executes the task and returs result to the driver ->driver returns result to the User ->App end 
+
+10)lineage and DAG
+
+11)catalyst Optimization
+
+12)RDD dataframe vs Dataset
+
+13)Driver and Worker Process ? These are JVM Process , one worker node has many executors ,each executor runs its own JVM Process
+
+14)Spark submit ? -submit spark job
+spark-submit --master Yarn --deployment-mode Client --executor-memory 4g --driver-memory 3g --num-executors 10 <.py>
+local machine--spark-submit \
+  --master local[4] \
+  --executor-memory 2g \
+  my_script.py
+
+15)Application? Single spark code or multiple notebooks with complex logic
+
+16)job-after app submit . Driver converts code to Job
+
+17)stage - Job are divided into stages , based on the wide transform shuffle . For every shuffle a new stage is created 
+
+18)Task - each task process 1 partition at a time . no of partition determine number of task 
+
+19)RDD 
+
+20)DAG -- keeps track of all transformation . For each transformation logical plan is created and lineage graph is maintained by dag
+
+21)Executor - can be config by spark settings 
+
+22)partition
+23)core - threads
+
+24)on heap memory -the executor memory on the jvm ,managed by jvm
+25)off heap memory -the executor memory lies outside Jvm process manages by os
+26)ibraries supported by spark -sql,stream,ml,graphx 
+27)Driver architecture --tf->Dag scheduler ->Task Scheduler->Cluster Manager ->Deploye Scheduler to workers ->worker result given to driver tracked by out put tracker 
+28) Worker Node Architecture ->executor -> cores->onheap memory 
+ all the above alse connects to off heap memeory 
+
+29)
