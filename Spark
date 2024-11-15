@@ -97,4 +97,13 @@ Job Cluster:
 can run fast and robust automated jobs .Created automatically and terminates after end of excution 
 Use for scheduled jobs
 
+pools:
+predefine the node count when attaching the cluster .
+less booting time . Suitable for cost saving and larger teams .
+
+37)Cluster modes ?
+Standard:suitable for single user and if no team collaboration is required 
+High Concurrency: suitable for collaboration. Provides fine grain sharing for max resources and min latency
+Single Node: this mode runs job only on driver node and no worker node are provisioned .
+
 
