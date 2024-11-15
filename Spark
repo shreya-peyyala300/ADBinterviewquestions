@@ -84,4 +84,7 @@ Garbage collection scan is avoided .
 
 (young generation move data to->old generation )
 
+35)Cluster?
+
+
 
