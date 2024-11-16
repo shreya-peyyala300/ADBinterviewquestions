@@ -275,5 +275,102 @@ Kimball	Dimensional modeling	Easy for BI and reporting	Rigid, lacks support for 
 Delta Lake	Lakehouse foundation	ACID transactions, time travel	Platform-dependent	Delta Lake underpins Medallion.
 Lakehouse	Unified data storage	Combines lakes and warehouses	Still evolving	Medallion organizes lakehouse data.
 
-87)
+87) SCD Type-2 (on data lake)-capture effective start and end date
+
+customer_dim_data = [
+
+(1,'manish','arwal','india','N','2022-09-15','2022-09-25'),
+(2,'vikash','patna','india','Y','2023-08-12',None),
+(3,'nikita','delhi','india','Y','2023-09-10',None),
+(4,'rakesh','jaipur','india','Y','2023-06-10',None),
+(5,'ayush','NY','USA','Y','2023-06-10',None),
+(1,'manish','gurgaon','india','Y','2022-09-25',None),
+]
+
+customer_schema= ['id','name','city','country','active','effective_start_date','effective_end_date']
+
+customer_dim_df = spark.createDataFrame(data= customer_dim_data,schema=customer_schema)
+
+sales_data = [
+
+(1,1,'manish','2023-01-16','gurgaon','india',380),
+(77,1,'manish','2023-03-11','bangalore','india',300),
+(12,3,'nikita','2023-09-20','delhi','india',127),
+(54,4,'rakesh','2023-08-10','jaipur','india',321),
+(65,5,'ayush','2023-09-07','mosco','russia',765),
+(89,6,'rajat','2023-08-10','jaipur','india',321)
+]
+
+sales_schema = ['sales_id', 'customer_id','customer_name', 'sales_date', 'food_delivery_address','food_delivery_country', 'food_cost']
+
+sales_df = spark.createDataFrame(data=sales_data,schema=sales_schema)
+
+#left join to capture data change
+joined_data=customer_dim_df.join(sales_df,customer_dim_df['id']==sales_df['customer_id'],"left")
+new_records_df=join_data.where((col("food_delivery_address")!=col("city"))&(col("activite")=="Y"))
+.withColums("active",lit("Y"))
+.withColumn("effective_end_date",col("sales_date"))\
+.withColum("effective_end_date",lit(None))
+.select(
+"cust_id",
+Cust_name,
+City,
+food_delivery_country,
+Active,
+effective_start_date
+effective_end_date)
+)
+#update Old record
+old_record=joined_date.where(
+(col("food_delivery_address"!=col("city"))&(col("active")=="Y"))
+.witColumn("active","N")
+.withColumn("effective_end_date",col("sales_date"))
+.select()
+)
+#find out new customer
+new_customer=sales_df.join(
+customer_dim_df,sales_df["customer_id"]==customer_dim_df["id"],"leftanti")\
+.withCOlumn('Active",lit("Y"))
+.WitchCOlumn("effective_start_date",col("sales_date"))
+.withCOlumn("effective_end_date",lit(None))
+.select())
+)
+
+final_record=customer_dim_df.union(new_records_df).union(old_records).union(new_customer)
+
+# remove duplicate
+
+window=Window.partitionBy("id","active").orderBy(col("effective_start_date").desc())
+final_record.withColumn("rnk",rank().over(window)).filter(~((col("active")=="Y")&(col("rank")>2))).drop("rnk")))
+
+
+Data Engineer Interview!!
+
+Interviewer: You're running a Spark job on a large dataset stored in HDFS. Suddenly, you notice that the job is taking longer than usual to complete. How would you troubleshoot ?
+
+Candidate: When faced with a slowdown in a Spark job, several factors could be contributing to the issue. Here's how I would approach:
+
+Interviewer: What would be your initial steps in troubleshooting the slow Spark job?
+
+I would check the Spark UI to gather information about the job's execution, including task progress, stage durations, and resource utilization. This can help identify bottlenecks and performance issues within the job.
+
+Interviewer: Could you provide some specific metrics or indicators you'd look for in the Spark UI?
+
+I'd focus on metrics such as task duration, shuffle read/write times, executor CPU and memory utilization, and garbage collection activity. These metrics can provide insights into potential performance bottlenecks, such as data skew, resource contention, or inefficient task execution.
+
+Interviewer: If you notice high shuffle read/write times in the Spark UI, how would you investigate further?
+
+High shuffle read/write times often indicate issues with data skew or inefficient shuffle operations. I would drill down into the stage details in the Spark UI to identify tasks with disproportionately high shuffle read/write times. Analyzing the data distribution and partitioning strategy can help pinpoint the cause of the skew and optimize the shuffle operations accordingly.
+
+Interviewer: What steps would you take if you suspect resource contention as the cause of the slowdown?
+
+If resource contention is suspected, I would examine executor CPU and memory utilization to identify any resource bottlenecks. Increasing executor memory or adjusting the number of executors can help alleviate resource contention and improve job performance. Additionally, optimizing resource allocation and task scheduling parameters in the Spark configuration can further optimize resource utilization.
+
+Interviewer: Suppose you've optimized resource utilization, but the job is still running slower than expected. What other factors would you consider?
+
+If resource utilization is optimized, I would investigate other potential factors impacting job performance, such as inefficient data processing logic, data skew, or suboptimal partitioning strategies. Analyzing the job's DAG and execution plan can provide insights into the data processing flow and identify opportunities for optimization.
+
+Interviewer: How would you ensure the stability and reliability of the Spark job after troubleshooting and optimization?
+
+After troubleshooting and optimization, I would conduct thorough testing to validate the stability and reliability of the Spark job under varying workload conditions and data scenarios. This includes performance testing, stress testing, and fault tolerance testing to ensure the job performs reliably and efficiently in production environments.
 
