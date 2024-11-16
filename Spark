@@ -261,3 +261,19 @@ permissive mode-stores in "_corrupt_record"
 
 .option("mode","DROPMALFORMED")
 
+81)how to rename 100 columns in pyspark
+82)how would you read multiple files with delimiters
+83)you have a dataset of 500gb that needs processing on spark cluster with 10 nodes .Each node has 64gb of memory and 16 cores?--conf
+84)Explain main features in deltalake that are adv
+85)how delta lake supports acid?
+86)Architecture
+Architecture	Focus	Strengths	Weaknesses	Comparison with Medallion
+Lambda	Real-time + batch processing	Handles real-time and historical data	Complex, dual-codebase	Medallion is simpler, focuses on quality improvement.
+Kappa	Streaming data processing	Simplifies real-time processing	Limited historical data support	Medallion supports batch + streaming.
+Data Vault	Data modeling for warehouses	Scalable, auditable	Complex modeling and queries	Medallion better for lakehouses.
+Kimball	Dimensional modeling	Easy for BI and reporting	Rigid, lacks support for lakes	Medallion supports unstructured data.
+Delta Lake	Lakehouse foundation	ACID transactions, time travel	Platform-dependent	Delta Lake underpins Medallion.
+Lakehouse	Unified data storage	Combines lakes and warehouses	Still evolving	Medallion organizes lakehouse data.
+
+87)
+
