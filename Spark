@@ -392,3 +392,11 @@ how to process files those are received before/after specified time?
 option(modifiedBefore,modifiedAfter)
 modifiedBefore- This attribute can be used to readfiles that were modified before the specified timestamp
 modifiedAfter-This attribute can be used to read files that were modified after the specified timestamp .
+df1=spark.read.option("header",True).csv(path="/mnt/input/Sales".csv,
+                modifiedAfter="2024-01-30T00:00:00")
+
+-------------------------------------------------------------------------------------
+
+How to handle corrupted records
+columnNameOfCorruptRecord-Allows rename the new filed having malformed string created by Premissive mode .
+spark.read.option("header",True).schema(schema).option("mode","PREMISSIVE").csv(path="/mnt/input/Employee.csv",columnNameOfCorruptRecord="errorrows")
