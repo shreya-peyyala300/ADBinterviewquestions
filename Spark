@@ -400,3 +400,10 @@ df1=spark.read.option("header",True).csv(path="/mnt/input/Sales".csv,
 How to handle corrupted records
 columnNameOfCorruptRecord-Allows rename the new filed having malformed string created by Premissive mode .
 spark.read.option("header",True).schema(schema).option("mode","PREMISSIVE").csv(path="/mnt/input/Employee.csv",columnNameOfCorruptRecord="errorrows")
+
+----------------------------------------------------------------------------------------
+How to load only correct records while reading data from file ?
+option mode(PERMISSIVE,DROPMALFORED,FAILFAST)
+DROPMALFORED-ignores the whole corrupted record.
+FastFail-throws an exception when it meets corrupted record
+PERMISSIVE-put the malformed String into field configured by columnNameof CorruptedRecord and sets malformed fields to null
