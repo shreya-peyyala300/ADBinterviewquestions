@@ -388,4 +388,7 @@ df.rdd.getNumPartitions()
 df1=df.select(spark_partition_id().alias('partid')).groupBy('partid').count()
 -----------------------------------------------------------------------------
 
-
+how to process files those are received before/after specified time?
+option(modifiedBefore,modifiedAfter)
+modifiedBefore- This attribute can be used to readfiles that were modified before the specified timestamp
+modifiedAfter-This attribute can be used to read files that were modified after the specified timestamp .
