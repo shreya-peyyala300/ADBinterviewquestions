@@ -384,3 +384,5 @@ Interviewer: How would you ensure the stability and reliability of the Spark job
 
 After troubleshooting and optimization, I would conduct thorough testing to validate the stability and reliability of the Spark job under varying workload conditions and data scenarios. This includes performance testing, stress testing, and fault tolerance testing to ensure the job performs reliably and efficiently in production environments.
 
+df.rdd.getNumPartitions()
+
