@@ -496,5 +496,15 @@ fl in spark and recovery mechanism?
 sparks approach to manage memory .How does it balance between storage and execution ?
 lazy evalueation and its benifits?
 diff between local, standalone and cluster mode ?
+expalin concept of JVM and Python wrapper in spark
+what strategies do you use for caching data in pyspark to improve performance ?
+udf and its drawbacks?
+manage failure notification in your workflows?
+create inernal and external tables in databricks ?
+how do you decide on cluster configurtion if you have 100GB of data ?
+what is driver memory , and when does it spill to disk ?
+what is executor memory , and when does it spill to disk ?
+what type of workloads can be run on standard cluster in databricks?
 
+Explain?
 
