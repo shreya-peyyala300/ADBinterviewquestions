@@ -447,3 +447,21 @@ have you integrated pyspark with other big data thech or dbs
 how do you handle data transfer between pyspark and external system 
 challenges faced in project 
 experience with cluster management in pyspark
+How do you scale pyspark app in a cluster enviroment 
+can you briefly describe some popular libraries or tools in pyspark ecosysytem apart from the core pyspark functionality?
+How does pyspark integrate with other components of the hadoop ecosystem , such as HDFS and YARN?
+Describe a scenario where you would use the pyspark dataframe API over RDDs
+How can you manage and optimize the memory usage of you pyspark application?
+How would you perform iterative operation in pyspark and its challenges?
+how can you manage and optimize the memory usage of your pyspark application?
+What is default file format in spark?
+rack awareness in hadoop?
+fl in spark?
+how to handle redundant data in pyspark
+how would you handle and ignore null values while loading data?
+how would you find 3rd highest salary in dataset?
+given a dataset with positive and negative invoice values, how would you convert positive values to negative while keeping the negative values unchnged?
+how can you convert date like "20/04/1963" to integer format
+given a dataset containing alphanumeric values and integer , how would you extract specific alphanumeric sequence like "ML","GL","LTR" and create a new dataframe to view only these sequences in spark?
+what kind of questions have you encountered related to data modelling in your project ?
+
