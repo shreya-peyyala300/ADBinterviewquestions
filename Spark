@@ -464,4 +464,35 @@ given a dataset with positive and negative invoice values, how would you convert
 how can you convert date like "20/04/1963" to integer format
 given a dataset containing alphanumeric values and integer , how would you extract specific alphanumeric sequence like "ML","GL","LTR" and create a new dataframe to view only these sequences in spark?
 what kind of questions have you encountered related to data modelling in your project ?
+How do you mask sensitive data in db ?different masking techniques available
+key concepts in data modelling ,including normalization and denormalization?
+How would you approach a project to migrate an on-premise data warehouse to cloud ?
+how do you handle schema evolution in spark?
+significance of spark sql
+how would you ensure that your spark job runs optimally in terms of memory and cpu usage?
+diff between select() and selectExpr()?
+how do you optimize join operation for large datasets?
+union vs unionAll()
+what happens if you forget to uncache data?
+how does speculative execution work in spark ?
+how can you configure spark for large scale processing ?
+purpose of sparksession ,getorcreate()
+how does spark handle failure in a distributed environment ?
+How do you perform aggregations in spark?
+whats best ways to handle incremental data loads
+how can you implement custom functions in spark?
+how do you cache data in spark?
+ensure data consistency in a distriuted spark environment ?
+cache() vs checkpoints()?
+why is schema on read are so improtant for data lake ?
+types of spark deployemnts
+diff between DynamicFrame and DataFrame ?
+different types of cluster used in project ?
+suppose you have a source that can provide any number of columns as input .How would you ensure that you can handle this situtation without failure ?
+How can you monitor nd trouble shoot the performance of a spark application ?list some monitoring tools ?
+accumulator
+how sparksession handle multiple spark jobs?
+fl in spark and recovery mechanism?
+sparks approach to manage memory .How does it balance between storage and execution ?
+
 
