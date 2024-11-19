@@ -428,3 +428,22 @@ spark.read.option("header",True).option("recursiveFileLookup",True).csv(path)
 df.write.option("header",True).mode("overwrite").csv(path=,sep="|",compression="gzip",encoding="cp1252")
 
 -------------------------------------------------------------------------------
+
+can you provide overview of experience working with pyspark
+How pyspark relate to apache saprk what adv does it offer in distributed data processing ?
+provide examples of pyspark DF opertions you frequently used ?
+Explain how data serialization works in pyspark
+significance of choosing right compression codec
+how do you deal with missing or null values
+specific strategies or function you prefer for handling missing data ?
+Experience with Spark SQL
+How to execute sql queries on pyspark dataframes
+provide an example where broad cast join can significantly improve performance ?
+Describe experience with pyspark MLilb?
+ML algo implemented using pysaprk
+how do you monitor and trouble shoot spark jobs 
+importance of logging in pyspark?
+have you integrated pyspark with other big data thech or dbs
+how do you handle data transfer between pyspark and external system 
+challenges faced in project 
+experience with cluster management in pyspark
