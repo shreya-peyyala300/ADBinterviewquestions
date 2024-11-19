@@ -407,3 +407,24 @@ option mode(PERMISSIVE,DROPMALFORED,FAILFAST)
 DROPMALFORED-ignores the whole corrupted record.
 FastFail-throws an exception when it meets corrupted record
 PERMISSIVE-put the malformed String into field configured by columnNameof CorruptedRecord and sets malformed fields to null
+
+---------------------------------------------------------------------------------------------
+
+how to create any separator in file writing & reading  in pyspark?
+how to use linesep in file creation & reading in pyspark?
+how to use inferschema while reading data from file in pyspark?
+
+linesep=This attribute can be used to specify single as a separate for each row while reading and writing file using either option or options.
+df.write.option("header","True").option("inferSchema","True").mode("overwrite").csv(path="",sep="|",linSep='/r')
+delimiter: This attribute can be used to specify single/multiple chracters as a seperated for each,column which reaading or writing using with option or options function.
+infer schema: it will automatically guess the dataatypes for each field , if we set option to true.
+--------------------------------------------------------------------------------------------------------
+
+How to read file from folder and subfolders?How to create zip/unzip files?
+options(recursiveFileLookup,codec)
+recursiveFileLookup: This attribute used to recursively scan the directories to read files(it will read data from subfolders too)
+codec:This attribute can be used to compress csv or other delimited files using passed compression method .it only works on csv or normal delimited files . Spark can read gzip without specifying codec , but for writing codec must be specified .
+spark.read.option("header",True).option("recursiveFileLookup",True).csv(path)
+df.write.option("header",True).mode("overwrite").csv(path=,sep="|",compression="gzip",encoding="cp1252")
+
+-------------------------------------------------------------------------------
