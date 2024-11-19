@@ -494,5 +494,7 @@ accumulator
 how sparksession handle multiple spark jobs?
 fl in spark and recovery mechanism?
 sparks approach to manage memory .How does it balance between storage and execution ?
+lazy evalueation and its benifits?
+diff between local, standalone and cluster mode ?
 
 
