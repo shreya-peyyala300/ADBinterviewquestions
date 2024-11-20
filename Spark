@@ -33,22 +33,22 @@ local machine--spark-submit \
   --executor-memory 2g \
   my_script.py
 
-15)Application? Single spark code or multiple notebooks with complex logic
+15)Application? Single spark code or multiple notebooks with complex logic-done
 
-16)job-after app submit . Driver converts code to Job
+16)job-after app submit . Driver converts code to Job-done
 
-17)stage - Job are divided into stages , based on the wide transform shuffle . For every shuffle a new stage is created 
+17)stage - Job are divided into stages , based on the wide transform shuffle . For every shuffle a new stage is created -done
 
-18)Task - each task process 1 partition at a time . no of partition determine number of task 
+18)Task - each task process 1 partition at a time . no of partition determine number of task -done
 
-19)RDD 
+19)RDD -done
 
-20)DAG -- keeps track of all transformation . For each transformation logical plan is created and lineage graph is maintained by dag
+20)DAG -- keeps track of all transformation . For each transformation logical plan is created and lineage graph is maintained by dag-done
 
 21)Executor - can be config by spark settings 
 
-22)partition
-23)core - threads
+22)partition 
+23)core - threads-done
 
 24)on heap memory -the executor memory on the jvm ,managed by jvm
 
