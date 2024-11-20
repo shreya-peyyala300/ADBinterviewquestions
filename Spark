@@ -1,18 +1,18 @@
 1)Spark internal Architecture?-done
 
-2)Repartition and colease
+2)Repartition and colease-done
 
-3)Cache and Persist
+3)Cache and Persist-done
 
-4)Difference between CSV JSON Parquest and Avro
+4)Difference between CSV JSON Parquest and Avro-done
 
-5)Driver and Executor OOM
+5)Driver and Executor OOM-done
 
-6)groupby key vs reduce by key. Which one is optimal and why ?
+6)groupby key vs reduce by key. Which one is optimal and why ?-done
 
 7)Transformation(filter,union) and Action(showw,collect,take,count,save) 
 
-8)External Shuffle Service why is it used ?
+8)External Shuffle Service why is it used ?-done
 
 8)Dynamic Resource Allocation why do we need Shuffle service ?
 
@@ -20,7 +20,7 @@
 
 10)lineage and DAG
 
-11)catalyst Optimization
+11)catalyst Optimization-done
 
 12)RDD dataframe vs Dataset
 
